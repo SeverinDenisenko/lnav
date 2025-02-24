@@ -74,7 +74,7 @@ read_header(int fd, const char* first8)
     }
     meta_buf.resize(meta_size);
 
-    return meta_buf;
+    return std::optional<auto_buffer>(std::move(meta_buf));
 }
 
 }  // namespace lnav::piper
